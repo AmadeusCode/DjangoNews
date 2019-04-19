@@ -1,0 +1,37 @@
+<!DOCTYPE html> {% load static %}
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Пример сайта на Django</title>
+    <link rel="shortcut icon" href="{% static 'ubuntu-icon.png' %}">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    {% include "index/includes/bootstrap.html" %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="jumbotron container-fluid">
+        <div class="row">
+          <div class="col-xl-3 col-md-2 col-sm-1"></div>
+          <div class="col-xl-6 col-md-8 col-sm-10">
+          <h1 class="text-center mb-5">Example of using Django 2.2+</h1>
+          {% block content %}
+          {% endblock %}
+          <p class="mt-5 text-center">
+            <a href="/" class="btn btn-success btn-lg m-1">Main page</a>
+            <a href="/news" class="btn btn-primary btn-lg m-1">News &raquo;</a>
+            <a href="/contacts" class="btn btn-info btn-lg m-1">Contacts</a>
+          </p>
+        </div>
+      </div>
+      <div class="container-fluid text-center">
+        <img src="{% static 'index/lamborghini-aventador.png' %}" class="img-thambnail img-fluid">
+        <hr>
+        <p class="text-center">&copy; All rights reserved 2019</p>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
